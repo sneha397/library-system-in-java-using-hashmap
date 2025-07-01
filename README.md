@@ -21,7 +21,7 @@ Scanner for input
 
 LocalDateTime and DateTimeFormatter for timestamp
 
-##📄 How It Works
+## 📄 How It Works
 User enters the name of the book they want to borrow.
 
 If the book is available:
@@ -35,7 +35,7 @@ If already borrowed, the system shows an appropriate message.
 If the book does not exist, the system informs the user.
 
 
-##📌 Author
+## 📌 Author
 👩‍💻 Sneha K
 
 💼 Java & Python Developer
