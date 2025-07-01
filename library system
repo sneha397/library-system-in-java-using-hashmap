@@ -1,0 +1,33 @@
+import java.util.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class LoginDashboardSystem {
+    public static void main(String[] args) {
+        HashMap<String, String> books = new HashMap<>();
+        books.put("harrypotter", "available");
+        books.put("leotolstoy", "available");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter book name: ");
+        String bookName = sc.nextLine();
+
+        if (books.containsKey(bookName) && books.get(bookName).equals("available")) {
+            // Update status to borrowed
+            books.put(bookName, "borrowed");
+
+            // Time of borrowing
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String currentTime = now.format(format);
+
+            System.out.println("✅ Book \"" + bookName + "\" borrowed at: " + currentTime);
+        } else if (books.containsKey(bookName)) {
+            System.out.println("❌ Book \"" + bookName + "\" is already borrowed.");
+        } else {
+            System.out.println("❌ Book not found in the library.");
+        }
+
+        sc.close();
+    }
+} readme for this 
